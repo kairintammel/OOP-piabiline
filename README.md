@@ -1,2 +1,2 @@
-# OOP-piabiline
+# OOP õpiabiline
 OOP esimene projekt
