@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class KaardiApp {
     private static Kaardihaldur haldur = new Kaardihaldur();
 
-    public static void main(String[] args) {
+    public static void käivita() {
         String kaartideArvString = JOptionPane.showInputDialog(null, "Mitu flashkaarti soovite luua?", "Flashkaartide arv", JOptionPane.QUESTION_MESSAGE);
         int kaartideArv = Integer.parseInt(kaartideArvString);
 
