@@ -19,6 +19,7 @@ public class Main {
         } else if (käsk == 2) {
             
         } else if (käsk == 3) {
+            KaardiApp.käivita();
             
         }
     }
