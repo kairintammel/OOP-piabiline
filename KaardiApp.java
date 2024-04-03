@@ -35,7 +35,7 @@ public class KaardiApp {
 public class KaardiApp {
     private static Kaardihaldur haldur = new Kaardihaldur();
 
-    public static void main(String[] args) {
+    public static void käivita() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Mitu flashkaarti soovite luua? ");
         int count = scanner.nextInt();
