@@ -38,9 +38,9 @@ public class PomodoroTaimer {
 
         while (sekundid > 0) {
 
-            System.out.print("\r" + String.format("%02d:%02d", sekundid / 60, sekundid % 60));
+            System.out.print("\r" + String.format("%02d:%02d", sekundid / 60, sekundid % 60)); // väljastab järelejäänud aja ekraanile
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1000); // ootab 1 sekund enne uut tsüklit
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
