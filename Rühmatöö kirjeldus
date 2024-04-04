@@ -18,7 +18,7 @@ Klasside eesmärgid ja peamised meetodid:
 Kaart.java
 Eesmärk: Andmestruktuur, mida kasutatakse informatsiooni hoidmiseks ja haldamiseks
 Olulisemad meetodid: 
-Konstruktor ´public Kaart(String kusimus, String vastus' - alustab kaardi obkjekti koos küsimuse ja vastusega
+Konstruktor ´public Kaart(String kusimus, String vastus' - obkjekti Kaart loomiseks koos küsimuse ja vastusega
 Getter 'getKusimus()' - tagastab kaardi küsimuse.
 Getter 'getVastus()' - tagastab kaardi vastuse.
 
