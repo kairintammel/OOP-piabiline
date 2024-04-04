@@ -25,7 +25,7 @@ Getter 'getVastus()' - kaardi vastuse saamiseks.
 Kaardihaldur.java
 Eesmärk: Võimaldab kaarte lisada, segada ja saada.
 Olulisemad meetodid:
-'public void lisaKaart(String kusimus, String vastus)' - loob uue Kaart objekti ja lisab selle kaartide listi.
+'public void lisaKaart(String kusimus, String vastus)' - lisab uue kaardi.
 'public void segaKaardid()' - segab kaartide järjestust listis, kasutades Math.random() funktsiooni.
 'public List<Kaart> getKaardid()' - tagastab kaartide nimekirja.
 
