@@ -10,5 +10,28 @@ Samuti suutsime ka tööjaotuse hästi ära jaotatud ning hästi omavahel suheld
 et mina tegelesin flashkaartide tegemisega ja Kairin pomododro ning motiveerivate sõnumite tegemisega. 
 See jaotus töötas hästi, sest saime kontrollida isesesvalt oma programmide tööd ning hiljem lihtsalt pidime peaklassis 
 kogu asja kokku panema.
-Arendamist flashkaartide osas vajaks see, et iga kord ei peaks uusi kaart tegema ja kaardid salvestuksid kuhugile.
+Arendamist flashkaartide osas vajaks see, et iga kord ei peaks uusi kaart tegema.
 
+
+Klasside eesmärgid ja peamised meetodid:
+Kaart.java
+Eesmärk: Andmestruktuur, mida kasutatakse informatsiooni hoidmiseks ja haldamiseks
+Olulisemad meetodid: 
+Konstruktor ´public Kaart(String kusimus, String vastus' - alustab kaardi obkjekti koos küsimuse ja vastusega
+Getter 'getKusimus()' - tagastab kaardi küsimuse.
+Getter 'getVastus()' - tagastab kaardi vastuse.
+
+Kaardihaldur.java
+Eesmärk: Võimaldab kaarte lisada, segada ja saada.
+Olulisemad meetodid:
+'public void lisaKaart(String kusimus, String vastus)' - loob uue Kaart objekti ja lisab selle kaartide listi.
+'public void segaKaardid()' - segab kaartide järjestust listis, kasutades Math.random() funktsiooni.
+'public List<Kaart> getKaardid()' - tagastab kaartide nimekirja.
+
+KaardiApp.java
+Eesmärk: Suhelda kasutajaga ning luua flashkaardid.
+Olulisemad meetodid:
+'public static void käivita()' - käivitab flahkaartide loomise. Kasutajalt küsitakse, mitu flashkaartio soovib teha,
+mis on kaartide küsimused ja vastused. Siis kaardid segatakse ja esitatase küsimused suvalises järjekorras. Kasutaja saab valida, 
+kas tahab näha vastus või mitte.
+Kasutab kasutaja sisendi saamiseks ja vastuste kuvamiseks JOptionPane'i.
