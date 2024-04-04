@@ -8,19 +8,24 @@ import javax.swing.JOptionPane;
 public class KaardiApp {
     private static Kaardihaldur haldur = new Kaardihaldur();
 
+    //meetod, mis käivitab flashkaartide rakenduse
     public static void käivita() {
+        //küsib kasutajalt, mitu flashkaarti soovib asutaja luua
         String kaartideArvString = JOptionPane.showInputDialog(null, "Mitu flashkaarti soovite luua?", "Flashkaartide arv", JOptionPane.QUESTION_MESSAGE);
         int kaartideArv = Integer.parseInt(kaartideArvString);
 
+        //tsükkel, millega küsitakse flashkaartide küsimusi ja vastuseid
         for (int i = 0; i < kaartideArv; i++) {
             String kusimus = JOptionPane.showInputDialog(null, "Sisesta küsimus kaardile " + (i + 1), "Küsimuse sisestamine", JOptionPane.QUESTION_MESSAGE);
             String vastus = JOptionPane.showInputDialog(null, "Sisesta vastus kaardile " + (i + 1), "Vastuse sisestamine", JOptionPane.QUESTION_MESSAGE);
             haldur.lisaKaart(kusimus, vastus);
         }
 
-        haldur.segaKaardid();
-        List<Kaart> kaardid = haldur.getKaardid();
+        
+        haldur.segaKaardid();//kaardid segatakse
+        List<Kaart> kaardid = haldur.getKaardid(); //saab segatud kaardid
 
+        //Kui kasutaja vastab jah, siis väljastatakse vastvava küsimuse vastus
         for (Kaart kaart : kaardid) {
             String vastusSoov = JOptionPane.showInputDialog(null, "Küsimus: " + kaart.getKusimus() + "\nKas soovite näha vastust? (jah/ei)", "Küsimuse vaatamine", JOptionPane.QUESTION_MESSAGE);
             if (vastusSoov != null && vastusSoov.equalsIgnoreCase("jah")) {
