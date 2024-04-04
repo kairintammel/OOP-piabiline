@@ -19,8 +19,8 @@ Kaart.java
 Eesmärk: Andmestruktuur, mida kasutatakse informatsiooni hoidmiseks ja haldamiseks
 Olulisemad meetodid: 
 Konstruktor ´public Kaart(String kusimus, String vastus' - obkjekti Kaart loomiseks koos küsimuse ja vastusega
-Getter 'getKusimus()' - tagastab kaardi küsimuse.
-Getter 'getVastus()' - tagastab kaardi vastuse.
+Getter 'getKusimus()' - kaardi küsimuse saamiseks.
+Getter 'getVastus()' - kaardi vastuse saamiseks.
 
 Kaardihaldur.java
 Eesmärk: Võimaldab kaarte lisada, segada ja saada.
