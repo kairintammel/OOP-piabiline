@@ -31,7 +31,7 @@ public class KaardiApp {
 }
 
 
-/*
+/*  ilma kujunduseta tehtud algne programm
 public class KaardiApp {
     private static Kaardihaldur haldur = new Kaardihaldur();
 
