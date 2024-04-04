@@ -17,10 +17,15 @@ public class Main {
         if (käsk == 1){
             System.out.println(MotiveerivSõnum.saadaSõnum("peptalk.txt"));
         } else if (käsk == 2) {
+            System.out.println("POMODORO TAIMER\n");
+            System.out.println("Pomodoro taimeri tööaeg on 25 minutit.");
+            System.out.println("Peale igat tsüklit on 5 minutit pausi, aga peale ");
+            System.out.println("igat neljandat tsüklit on pikem paus (15 minutit).\n");
+            PomodoroTaimer.kutsuVälja();
             
         } else if (käsk == 3) {
             KaardiApp.käivita();
-            
+
         }
     }
 }

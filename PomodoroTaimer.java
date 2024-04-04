@@ -1,42 +1,51 @@
-import java.util.Timer;
-import java.util.TimerTask;
+// Pomodoro taimer
+
+import java.util.Scanner;
 
 public class PomodoroTaimer {
-    int tööMinut;
-    int pausMinut;
-    int mituRingi;
+    public static void kutsuVälja() {
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("Mitu 25-5 tsüklit sooviksid käivitada? ");
 
-    public PomodoroTaimer(int tööMinut, int pausMinut, int mituRingi) {
-        this.tööMinut = tööMinut;
-        this.pausMinut = pausMinut;
-        this.mituRingi = mituRingi;
-    }
+        int tsükleid = scanner1.nextInt();
 
-    public void countdown(){
-        for (int i = 5; i >= 0; i--) {
-            Timer timer = new Timer();
-            int finalI = i;
-            TimerTask countdown = new TimerTask() {
-                @Override
-                public void run() {
-                    System.out.println(finalI);
-                }
-            };
-            timer.schedule(countdown, 1000);
+        System.out.println("Vajuta ENTER taimeri käivitamiseks.");
+        Scanner scanner2 = new Scanner(System.in);
+
+        int mitmes = 1;
+
+        while (mitmes <= tsükleid) {
+            scanner2.nextLine(); // Ootab, et kasutaja vajutaks ENTER
+            tsükleid--;
+
+            System.out.println("Tsükkel " + (mitmes + 1) + " --> Tööaeg 25 minutit.");
+            countdown(25);
+
+            if (mitmes % 3 == 0) { // peale igat neljandat tsüklit pikem paus
+                System.out.println("Pikem paus - 15 minutit.");
+                countdown(15);
+            } else {
+                System.out.println("Paus - 5 minutit.");
+                countdown(5);
+            }
+            mitmes ++;
         }
     }
-    public void teeTööd() {
-        for (int i = 0; i < tööMinut; i++) {
-            Timer timer = new Timer();
-            double aegaJäänud = tööMinut;
-            TimerTask ülesanne = new TimerTask() {
-                @Override
-                public void run() {
-                    System.out.println();
-                }
-            };
 
-            timer.schedule(ülesanne, tööMinut * 1000); //
+    public static void countdown(int minutid)
+    {
+        int sekundid = minutid * 60;
+
+        while (sekundid > 0) {
+
+            System.out.print("\r" + String.format("%02d:%02d", sekundid / 60, sekundid % 60));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            sekundid--;
         }
+        System.out.println("\nAeg!!!");
     }
 }
