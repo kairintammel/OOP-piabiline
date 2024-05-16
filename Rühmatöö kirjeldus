@@ -93,21 +93,35 @@ Vahelduva eduga läks töö tegemiseks kaks päeva.
 
 
 Kairin:
-Minu teha oli kasutajale motiveerivate sõnumite kuvamine ja pomodoro taimeri loomine. Lõin
+1) Minu teha oli kasutajale motiveerivate sõnumite kuvamine ja pomodoro taimeri loomine. Lõin
 selleks klassid MotiveerivSõnum ja PomodoroTaimer. Ka fail ‘peptalk.txt’ on minu koostatud. Oma
 algse idee selgitamise lihtsustamiseks kirjutasin põhiklassi valmis kasutaja poole pöördumise.
-Kokku kulus projekti tegemiseks ligikaudu 6h.
+Kokku kulus projekti esimese osa tegemiseks ligikaudu 6h.
+2) Väga tore oli sama rühmakaaslasega ka teist projekti osa teha :). Sain seekord harjutada JavaFXi
+kasutamist ja andmete failist lugemist ning nende faili kirjutamist.
+
+
+
 Mured:
+
 Panime mõlemad tähele, et alguses oli keeruline ise programmi koostada, sest erinevalt muust
 koolitööst ei olnud nüüd juhendit ees. Esimene katsumus oli kasutaja ja programmi vahelise
 suhtluse lisamine, sest sellega ei olnud javas varem kokku puutunud. Peale esimeste takistuste
 ületamist läks lahenduste leidmine juba kiiremini.
+
+
+
 Hinnang:
+
 Oleme oma tööga rahul, sest saime valmis programmi, mis rühmatöö nõuetele vastab, ning
 millest meile endalegi kasu võiks olla. Tööjaotusega oleme samuti rahul, sest see võimaldas meil
 keskenduda kindlate funktsionaalsuste loomisele ning hiljem saime need omavahel peaklassi
 abil üsna lihtsasti ühendada.
+
+
+
 Testimine:
+
 Kasutajaga suhtlust sai kotrollida kui teised klassid peaklassist välja kommenteerisime ning
 erinevate inputide puhul lasime programmil kindlaid tulemusi tagastada. Teistes klassides
 olevaid meetodeid sai kontrollida peaklassi abil, tehes mitmeid kordi läbi programmi kasutamise
