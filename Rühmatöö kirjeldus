@@ -87,13 +87,13 @@ Rühmatöö etapid:
 
 
 Mariann:
-Minu jaoks oli kõige raskem algus. Erinevalt praktikumidest ja kodudtöödes puudus nüüd täspem
-juhis, milliseid klasse või meetodid peaks täpsemalt tegema. Nüüd oli vaja kõik ise välja mõelda.
-Kui algus sai pusitud, siis läks töö hoogsamalt edasi. Ma ütleks, et saime tööga hästi hakkama,
-sest rühmatöö eesmärgid said täidetud.
-Minu tehtud klassid: Kaart.java, Kaardihaldur.java, KaardiApp.java
-Arendamist flashkaartide osas vajaks see, et iga kord ei peaks uusi kaart tegema.
-Vahelduva eduga läks töö tegemiseks kaks päeva.
+Minu teha oli Flashkaardid ja selle realiseerimne JavaFx-is.
+Hea oli, et jätkasime oma rühmatööga, mida esimesena tegime,  nii oli lihtsam teemaga edasi minna, ega pidanud nullist alustama.
+Kõige rohkkem aega võttis JavaFX-ga töötamine. ALguses tuli asju meelde tuletada ja googeldada.
+Minu tehtud klassid: Kaart.java, Kaardihaldur.java, FlashKaardid.java.
+Tööjaotus oli meil hea, jagasime ära, kes millega tegeleb ja siis oli hea alguses üksinda nokitseda ning hiljem asjad kokku panna. 
+Nii oli ka hea proovida ninhg testida koodijuppe.
+Rühmakaaslasega koostöö sujus hästi.
 
 
 
