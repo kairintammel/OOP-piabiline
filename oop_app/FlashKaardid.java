@@ -1,5 +1,6 @@
 package org.example.oop_app;
 
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,45 +13,44 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Collections;
 import java.util.Optional;
 
+//Põhiklass, millega tehakse JavaFX aplikatsioon
 public class FlashKaardid extends Application {
-
+    //Kaardihaldur flashkaartide haldamiseks
     private Kaardihaldur haldur = new Kaardihaldur();
+    //List, mis hpiustab segatud kaarte
     private ObservableList<Kaart> segatudKaardid = FXCollections.observableArrayList();
+    //indeks mis, jägib praegust kaarti
     private int praeguneKaartIndex = 0;
+    //Fail, logide jaoks
     private File logiFail = new File("flashkaardid.txt");
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
 
+        //Kui logifaili ei eksisteeri, luuakse uus fail
         if (!logiFail.exists()) {
-            try {
-                logiFail.createNewFile();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            logiFail.createNewFile();
         }
 
+        //VBox paigutus
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
 
-        Label kusimuseLabel = new Label();
-        Button naeVastusNupp = new Button("Näita vastust");
-        Button jargmineKaartNupp = new Button("Järgmine kaart");
-        Button tagasiNupp = new Button("Mine eelmise küsimuse juurde");
-        Button lopetaNupp = new Button("Lõpeta");
-        Button uuestiNupp = new Button("Alusta uuesti");
 
+        //Erinevate graafiliste elementide loomine
+        Label kusimuseLabel = new Label(); //Küsimuse kuvamiseks
+        Button naeVastusNupp = new Button("Näita vastust"); //Vastuse kuvamiseks
+        Button jargmineKaartNupp = new Button("Järgmine kaart"); //Järgmise kaardi juurde minemiseks nupp
+        Button tagasiNupp = new Button("Mine eelmise küsimuse juurde"); //Nupp, et minna eelmise küsimuse juurde
+        Button lopetaNupp = new Button("Lõpeta"); //Nupp lõpetamiseks
+        Button uuestiNupp = new Button("Alusta uuesti"); //Nupp, et uuesti alustada flashkaartide kasutamist
+
+
+       //Alguses keelan nupud ja muudan mõned nähtamatuks, sest nende kasutamine pole veel vajalik
         naeVastusNupp.setDisable(true);
         jargmineKaartNupp.setDisable(true);
         tagasiNupp.setDisable(true);
@@ -59,14 +59,17 @@ public class FlashKaardid extends Application {
         uuestiNupp.setDisable(true);
         uuestiNupp.setVisible(false);
 
+        //Tsükkel, millega küsitakse kasutajalt kaartide arvu
         while (true) {
             TextInputDialog Dialoog = new TextInputDialog(" ");
             Dialoog.setTitle("Kaartide loomine");
             Dialoog.setHeaderText("Flashkaartide loomine");
             Dialoog.setContentText("Palun sisesta kaartide arv:");
 
+            //Dialoogi kuvamine ja kasutajalt sisendi ootamine
             Optional<String> result = Dialoog.showAndWait();
             if (result.isPresent()) {
+                //kasutaja sisendi töötlemine ja kuvamine
                 try {
                     int count = Integer.parseInt(result.get());
                     for (int i = 0; i < count; i++) {
@@ -89,13 +92,17 @@ public class FlashKaardid extends Application {
                             }
                         }
                     }
+
+                    //Kaartide segamine
                     segatudKaardid.setAll(haldur.getKõikKaardid());
                     Collections.shuffle(segatudKaardid);
                     kusimuseLabel.setText(segatudKaardid.get(0).getKusimus());
+                    //vajalikke nuppe saab kasutada
                     naeVastusNupp.setDisable(false);
                     jargmineKaartNupp.setDisable(false);
                     tagasiNupp.setDisable(praeguneKaartIndex <= 0);
                     break;
+                    //kui on ei ole sisestatud number antakse vea teade
                 } catch (NumberFormatException e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Vigane sisestus");
@@ -104,12 +111,13 @@ public class FlashKaardid extends Application {
                     alert.showAndWait();
                 }
             } else {
-                // Kui kasutaja tühistab dialoogi, sulgeme programmi
+                // Kui kasutaja tühistab dialoogi(ei siseta midagi lahtrisse), suletakse programm
                 primaryStage.close();
                 return;
             }
         }
 
+        // "Näita vastust" nupu tegevus
         naeVastusNupp.setOnAction(e -> {
             String vastus = segatudKaardid.get(praeguneKaartIndex).getVastus();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -124,10 +132,13 @@ public class FlashKaardid extends Application {
             }
         });
 
+
+        // "Järgmine kaart" nupu tegevus
         jargmineKaartNupp.setOnAction(e -> {
             praeguneKaartIndex++;
             if (praeguneKaartIndex >= segatudKaardid.size()) {
                 kusimuseLabel.setText("Kõik kaardid on näidatud");
+                //Nuppude seadistuste muutmine
                 jargmineKaartNupp.setDisable(true);
                 naeVastusNupp.setDisable(true);
                 tagasiNupp.setDisable(true);
@@ -136,11 +147,14 @@ public class FlashKaardid extends Application {
                 uuestiNupp.setDisable(false);
                 uuestiNupp.setVisible(true);
             } else {
+                //Kuvatakse järgmine küsimus
                 kusimuseLabel.setText(segatudKaardid.get(praeguneKaartIndex).getKusimus());
                 tagasiNupp.setDisable(false);
             }
         });
 
+
+        //"mine eelmise küsimuse juurde" nupu tegevus
         tagasiNupp.setOnAction(e -> {
             if (praeguneKaartIndex > 0) {
                 praeguneKaartIndex--;
@@ -151,11 +165,17 @@ public class FlashKaardid extends Application {
             }
         });
 
+
+        //"Lõpeta" nupu tegevus
         lopetaNupp.setOnAction(e -> {
             primaryStage.close();
         });
 
+
+        //"Alusta uuesti" nupu tegevus
         uuestiNupp.setOnAction(e -> {
+
+            //Indeks nii öelda restetitakse ning segatakse kaardid uuest, kogu tegevus hakkab uuesti pihta
             praeguneKaartIndex = 0;
             Collections.shuffle(segatudKaardid);
             kusimuseLabel.setText(segatudKaardid.get(praeguneKaartIndex).getKusimus());
@@ -168,6 +188,8 @@ public class FlashKaardid extends Application {
             uuestiNupp.setVisible(false);
         });
 
+
+        //Lisatakse komponendid juurelementi ja luuakse tseen
         root.getChildren().addAll(kusimuseLabel, naeVastusNupp, jargmineKaartNupp, tagasiNupp, lopetaNupp, uuestiNupp);
         Scene scene = new Scene(root, 400, 300);
         primaryStage.setTitle("Flashkaardi Rakendus");
@@ -175,9 +197,17 @@ public class FlashKaardid extends Application {
         primaryStage.show();
     }
 
+
+    //Meetod, millega lisatakse kaardid logifaili
     private void logiKaardiSisestus(String s, String kusimus, String vastus) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(logiFail, true))) {
             writer.write(s + ";" + kusimus + ";" + vastus + "\n");
         }
     }
+
+    public static void main(String[] args) {
+        launch(args); //Käivitatakse rakendus
+    }
+
+
 }
