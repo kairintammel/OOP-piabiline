@@ -28,6 +28,10 @@ näha mitu minutit ja sekundit käesolevas etapis veel alles jäänud on
 Samuti on võimalus liikuda eelmise üsimuse juurde. Kui kõik küsimused on vaadataud ja jõutakse lõppu, saab kasutaja valida, kas tahab
 uuesti kaardid segada ning küsimusi uuesti vaadata või programmi lõpetada.
 
+4) ToDo list
+• JavaFX rakendus, mis on mõeldud kasutaja todo listi koostamiseks.
+• loetelu salvestatakse faili, ning loetakse sealt uuesti sisse, kui rakendus käivitatakse.
+
 
 
 Klassid:
@@ -68,6 +72,16 @@ koos küsimuse ja vastusega
 • 'private ObservableList<Kaart> kaardid'  - list flashkaartide jaoks
 • 'public List<Kaart> getKõikKaardid()' - tagastab kaartide nimekirja.
 
+7) ToDoApp
+• JavaFX klass
+• loeb taskid failist "todo.txt" kui application käivitatakse
+• kirjutab taskid faili "todo.txt" kui application suletakse
+
+8) ToDoList
+• VBoxi alamklass
+• loob tekstiväljad ja nupud rakenduse töötamiseks
+• Võimaldab taske loetelust kustutada ja neid sinna lisada
+
 
 
 Rühmatöö etapid:
@@ -99,16 +113,19 @@ selleks klassid MotiveerivSõnum ja PomodoroTaimer. Ka fail ‘peptalk.txt’ on
 algse idee selgitamise lihtsustamiseks kirjutasin põhiklassi valmis kasutaja poole pöördumise.
 Kokku kulus projekti esimese osa tegemiseks ligikaudu 6h.
 2) Väga tore oli sama rühmakaaslasega ka teist projekti osa teha :). Sain seekord harjutada JavaFXi
-kasutamist ja andmete failist lugemist ning nende faili kirjutamist.
+kasutamist ja andmete failist lugemist ning nende faili kirjutamist. JavaFX-iga töötamine pole just mu lemmik,
+aga seda enam olin õnnelik, kui programm lõpuks töötas nii nagu soovisin. Rühmatöö
+teise osa peale kulus umbes sama kaua aega kui esimese osa peale.
 
 
 
 Mured:
 
-Panime mõlemad tähele, et alguses oli keeruline ise programmi koostada, sest erinevalt muust
+1) Panime mõlemad tähele, et alguses oli keeruline ise programmi koostada, sest erinevalt muust
 koolitööst ei olnud nüüd juhendit ees. Esimene katsumus oli kasutaja ja programmi vahelise
 suhtluse lisamine, sest sellega ei olnud javas varem kokku puutunud. Peale esimeste takistuste
 ületamist läks lahenduste leidmine juba kiiremini.
+2) Kõige keerulisem osa oli JavaFX klassid ühendada varem koostatud Java klassidega.
 
 
 
