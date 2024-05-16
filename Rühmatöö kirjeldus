@@ -1,38 +1,128 @@
-Autorid: Kairin Tammel ja Mariann Märtin
+OOP rühmatöö kirjeldus
+Autorid: Kairin Tammel, Mariann Märtin
+
+Õpiabiline
+
+Õpiabiline on mitme funktsionaalsusega programm, mis vastvalt kasutaja soovidele suudab
+teda õppetöö käigus abistada. Programm esitab esmalt kasutajale loetelu võimalikest
+tööriistadest ning seejärel laseb tal valida, millist sellel hetkel vaja oleks. Saadaval olevad
+tööriistad on:
+
+1) Motiveeriv sõnum
+• Loeb failist ‘peptalk.txt’ ridade kaupa motiveerivad tsitaadid ning Random abil
+valib nende kõigi seast suvalise, mille kasutajale kuvada.
+
+2) Pomodoro taimer
+• Pomodoro aitab kasutajal tööle keskenduda kindlate intervallide abil.
+• Ühe tsükli tööaeg on 25 minutit ning pausi aeg 5 minutit. Iga nelja tsükli järel on
+paus pikem (15 minutit)
+• Programm seletab kasutajale taimeri tööd ning palub siis sisestada soovitud
+tsüklite arvu
+• Kastutaja paneb taimeri tööle enter klahvi vajutades ning seejärel on talle pidevalt
+näha mitu minutit ja sekundit käesolevas etapis veel alles jäänud on
+• Programm lõpetab töö alles peale määratud arvu tsüklite läbimist
+
+3) Flash kaartide koostamine
+
+
+Klassid:
+
+1) Main
+• Kasutajaga suhtlemine, teiste klasside poole pöördumine
+
+2) MotiveerivSõnum
+• Loeb failist sõnumid ja tagastab nende seast suvalise, mida kasutajale näidata
+• ‘public static List<String> loefailist(String fail)’ – loeb failist ‘peptalk.txt’
+motiveerivat tsitaadid
+• ‘public static String saadaSõnum(String fail)’ – kutsub välja loeFailist meetodi ja
+valib tsitaatide seast suvalise, mida kasutajale kuvada
+
+3) PomodoroTaimer
+• Küsib kasutajalt soovitud tsüklite arvu, käivitab taimeri vastavalt
+• ‘public static void kutsuVälja()’ – suhtleb kasutajaga ja määrab ära, kas
+käivitatakse tööaja või pausi taimer
+• ‘public static void countdown(int minutid)’ – selle meetodi järgi taimer töötab
+vastavalt parameetrina antud ajale.
+
+4) KaardiApp
+• Suhelda kasutajaga ning luua flashkaardid
+• 'public static void käivita()' - käivitab flahkaartide loomise. Kasutajalt küsitakse,
+mitu flashkaartio soovib teha, mis on kaartide küsimused ja vastused. Siis kaardid
+segatakse ja esitatase küsimused suvalises järjekorras. Kasutaja saab valida, kas
+tahab näha vastust või mitte.
+• Kasutab kasutaja sisendi saamiseks ja vastuste kuvamiseks JOptionPane'i.
+
+5) Kaart
+• Andmestruktuur, mida kasutatakse informatsiooni hoidmiseks ja haldamiseks
+• Konstruktor ´public Kaart(String kusimus, String vastus' - alustab kaardi obkjekti
+koos küsimuse ja vastusega
+• Getter 'getKusimus()' - tagastab kaardi küsimuse.
+• Getter 'getVastus()' - tagastab kaardi vastuse.
+
+6) Kaardihaldur
+• Võimaldab kaarte lisada, segada ja Saada
+• 'public void lisaKaart(String kusimus, String vastus)' - loob uue Kaart objekti ja
+lisab selle kaartide listi.
+• 'public void segaKaardid()' - segab kaartide järjestust listis, kasutades
+Math.random() funktsiooni.
+• 'public List<Kaart> getKaardid()' - tagastab kaartide nimekirja.
 
 
 
-Tööprotsess Mariann: Minu jaoks oli kõige raskem algus.  Erinevalt praktikumidest ja kodudtöödes puudus nüüd täspem juhis,
-milliseid klasse või meetodid peaks täpsemalt tegema. Nüüd oli vaja kõik ise välja mõelda. Kui algus sai pusitud,
-siis läks töö hoogsamalt edasi. Ma ütleks, et saime tööga hästi hakkama, sest rühmatöö eesmärgid said täidetud. 
+Rühmatöö etapid:
+
+1) Idee leidmine, kokkulepete tegemine rühmakaaslaste vahel
+2) Tööplaani kooskõlastamine
+3) Kasutaja ja programmi vahelise suhtluse loomine
+4) Vajalike funktsionaalsuste loomine, rühmakaaslased tegid eraldi
+5) Uuenduste tegemine, GUI loomine
+6) Funktsionaalsuste ja Põhiklassi kokkuviimine, rühmakaaslaste koodi ühendamine
+7) Viimistlemine ja kommenteerimine
+8) Kirjelduse koostamine, mõlema rühmakaaslase tagasiside
+
+
+Mariann:
+Minu jaoks oli kõige raskem algus. Erinevalt praktikumidest ja kodudtöödes puudus nüüd täspem
+juhis, milliseid klasse või meetodid peaks täpsemalt tegema. Nüüd oli vaja kõik ise välja mõelda.
+Kui algus sai pusitud, siis läks töö hoogsamalt edasi. Ma ütleks, et saime tööga hästi hakkama,
+sest rühmatöö eesmärgid said täidetud.
 Minu tehtud klassid: Kaart.java, Kaardihaldur.java, KaardiApp.java
-Töö tegemiseks ma täspselt aega ei võtnud. Vahelduva eduga läks kaks päeva.
-Samuti suutsime ka tööjaotuse hästi ära jaotatud ning hästi omavahel suheldud. Rühmatöö jaotasime nii ära, 
-et mina tegelesin flashkaartide tegemisega ja Kairin pomododro ning motiveerivate sõnumite tegemisega. 
-See jaotus töötas hästi, sest saime kontrollida isesesvalt oma programmide tööd ning hiljem lihtsalt pidime peaklassis 
-kogu asja kokku panema.
 Arendamist flashkaartide osas vajaks see, et iga kord ei peaks uusi kaart tegema.
+Vahelduva eduga läks töö tegemiseks kaks päeva.
 
 
-Klasside eesmärgid ja peamised meetodid:
-Kaart.java
-Eesmärk: Andmestruktuur, mida kasutatakse informatsiooni hoidmiseks ja haldamiseks
-Olulisemad meetodid: 
-Konstruktor ´public Kaart(String kusimus, String vastus' - obkjekti Kaart loomiseks koos küsimuse ja vastusega
-Getter 'getKusimus()' - kaardi küsimuse saamiseks.
-Getter 'getVastus()' - kaardi vastuse saamiseks.
 
-Kaardihaldur.java
-Eesmärk: Võimaldab kaarte lisada, segada ja saada.
-Olulisemad meetodid:
-'public void lisaKaart(String kusimus, String vastus)' - lisab uue kaardi.
-'public void segaKaardid()' - segab kaartide järjestust listis, kasutades Math.random() funktsiooni.
-'public List<Kaart> getKaardid()' - tagastab kaartide nimekirja.
+Kairin:
+1) Minu teha oli kasutajale motiveerivate sõnumite kuvamine ja pomodoro taimeri loomine. Lõin
+selleks klassid MotiveerivSõnum ja PomodoroTaimer. Ka fail ‘peptalk.txt’ on minu koostatud. Oma
+algse idee selgitamise lihtsustamiseks kirjutasin põhiklassi valmis kasutaja poole pöördumise.
+Kokku kulus projekti esimese osa tegemiseks ligikaudu 6h.
+2) Väga tore oli sama rühmakaaslasega ka teist projekti osa teha :). Sain seekord harjutada JavaFXi
+kasutamist ja andmete failist lugemist ning nende faili kirjutamist.
 
-KaardiApp.java
-Eesmärk: Suhelda kasutajaga ning luua flashkaardid.
-Olulisemad meetodid:
-'public static void käivita()' - käivitab flahkaartide loomise. Kasutajalt küsitakse, mitu flashkaartio soovib teha,
-mis on kaartide küsimused ja vastused. Siis kaardid segatakse ja esitatase küsimused suvalises järjekorras. Kasutaja saab valida, 
-kas tahab näha vastus või mitte.
-Kasutab kasutaja sisendi saamiseks ja vastuste kuvamiseks JOptionPane'i.
+
+
+Mured:
+
+Panime mõlemad tähele, et alguses oli keeruline ise programmi koostada, sest erinevalt muust
+koolitööst ei olnud nüüd juhendit ees. Esimene katsumus oli kasutaja ja programmi vahelise
+suhtluse lisamine, sest sellega ei olnud javas varem kokku puutunud. Peale esimeste takistuste
+ületamist läks lahenduste leidmine juba kiiremini.
+
+
+
+Hinnang:
+
+Oleme oma tööga rahul, sest saime valmis programmi, mis rühmatöö nõuetele vastab, ning
+millest meile endalegi kasu võiks olla. Tööjaotusega oleme samuti rahul, sest see võimaldas meil
+keskenduda kindlate funktsionaalsuste loomisele ning hiljem saime need omavahel peaklassi
+abil üsna lihtsasti ühendada.
+
+
+
+Testimine:
+
+Kasutajaga suhtlust sai kotrollida kui teised klassid peaklassist välja kommenteerisime ning
+erinevate inputide puhul lasime programmil kindlaid tulemusi tagastada. Teistes klassides
+olevaid meetodeid sai kontrollida peaklassi abil, tehes mitmeid kordi läbi programmi kasutamise
+erinevaid viise.

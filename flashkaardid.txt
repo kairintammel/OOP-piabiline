@@ -1,0 +1,4 @@
+Kaardi lisamine;mis kell on;12
+Kaardi lisamine;mis mu nimi on;kairin
+Vastuse vaatamine;mis mu nimi on;kairin
+Vastuse vaatamine;mis kell on;12

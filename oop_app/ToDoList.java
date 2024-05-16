@@ -14,7 +14,7 @@ public class ToDoList extends VBox {
     private ObservableList<String> taskid;
     private ListView<String> listView;
 
-    public ToDoList(){
+    public ToDoList() {
         taskid = FXCollections.observableArrayList();
         listView = new ListView<>(taskid);
 
@@ -40,7 +40,6 @@ public class ToDoList extends VBox {
         getChildren().addAll(kirjeldus, listView, sisend, lisa, eemalda);
 
 
-
     }
 
     private void lisaTask(String text) {
@@ -51,7 +50,7 @@ public class ToDoList extends VBox {
         taskid.remove(text);
     }
 
-    public void setTaskid(List<String> taskid){
+    public void setTaskid(List<String> taskid) {
         this.taskid.addAll(taskid);
     }
 
