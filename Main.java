@@ -1,3 +1,5 @@
+package org.example.oop_app;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,7 +8,8 @@ public class Main {
         System.out.println("Millega saame sind täna aidata?");
         System.out.println("\n1) Vajan motiveerivat sõnumit." +
                 "\n2) Tahan kasutada pomodoro taimerit." +
-                "\n3) Soovin luua flash kaarte.");
+                "\n3) Soovin luua flash kaarte." +
+                "\n4) soovin avada TO-DO listi.");
         
         Scanner scanner = new Scanner(System.in);
 
@@ -24,8 +27,10 @@ public class Main {
             PomodoroTaimer.kutsuVälja();
             
         } else if (käsk == 3) {
-            KaardiApp.käivita();
+            //KaardiApp.käivita();
 
+        } else if (käsk == 4) {
+            ToDoApp.main(args);
         }
     }
 }
