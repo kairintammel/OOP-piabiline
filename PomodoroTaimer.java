@@ -1,4 +1,4 @@
-// Pomodoro taimer
+package org.example.oop_app;// Pomodoro taimer
 
 import java.util.Scanner;
 
