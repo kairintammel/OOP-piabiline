@@ -23,6 +23,11 @@ näha mitu minutit ja sekundit käesolevas etapis veel alles jäänud on
 • Programm lõpetab töö alles peale määratud arvu tsüklite läbimist
 
 3) Flash kaartide koostamine
+• Programm koostab kasutaja sisendiga flashkaardid. Kaardid segatakse ning esitatakse kasutajale suvalises järjekorras.
+• Kasutajale järgnevalt esitatatase küsimus ja ta saab valida kas tahab vaadata vastust või mitta. Peale seda saab ta liikuda järgmise küsimuse juurde.
+Samuti on võimalus liikuda eelmise üsimuse juurde. Kui kõik küsimused on vaadataud ja jõutakse lõppu, saab kasutaja valida, kas tahab
+uuesti kaardid segada ning küsimusi uuesti vaadata või programmi lõpetada.
+
 
 
 Klassid:
