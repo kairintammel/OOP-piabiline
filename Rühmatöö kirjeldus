@@ -49,13 +49,11 @@ käivitatakse tööaja või pausi taimer
 • ‘public static void countdown(int minutid)’ – selle meetodi järgi taimer töötab
 vastavalt parameetrina antud ajale.
 
-4) KaardiApp
-• Suhelda kasutajaga ning luua flashkaardid
-• 'public static void käivita()' - käivitab flahkaartide loomise. Kasutajalt küsitakse,
-mitu flashkaartio soovib teha, mis on kaartide küsimused ja vastused. Siis kaardid
-segatakse ja esitatase küsimused suvalises järjekorras. Kasutaja saab valida, kas
-tahab näha vastust või mitte.
-• Kasutab kasutaja sisendi saamiseks ja vastuste kuvamiseks JOptionPane'i.
+4) Flashkaardid
+• Suhelda kasutajaga, luua, hallata ja kuvada falshkaarte. Võimaldab kasutajal sisestada küsimusi ja vastuseid, ning hiljem
+• 'start(Stage primaryStage)': Peamine meetod, mis seadistab ja kuvab graafilist lahendust ning haldab kasutaja sisestusi ja nupuvajutusi.
+• 'private void logiKaardiSisestus(String s, String kusimus, String vastus)': Logib kaardiga seotud tegevused faili.
+
 
 5) Kaart
 • Andmestruktuur, mida kasutatakse informatsiooni hoidmiseks ja haldamiseks
@@ -65,12 +63,10 @@ koos küsimuse ja vastusega
 • Getter 'getVastus()' - tagastab kaardi vastuse.
 
 6) Kaardihaldur
-• Võimaldab kaarte lisada, segada ja Saada
-• 'public void lisaKaart(String kusimus, String vastus)' - loob uue Kaart objekti ja
-lisab selle kaartide listi.
-• 'public void segaKaardid()' - segab kaartide järjestust listis, kasutades
-Math.random() funktsiooni.
-• 'public List<Kaart> getKaardid()' - tagastab kaartide nimekirja.
+• Võimaldab kaarte lisada ja saada
+• 'public void lisaKaart(String kusimus, String vastus)' - lisab uue kaardi
+• 'private ObservableList<Kaart> kaardid'  - list flashkaartide jaoks
+• 'public List<Kaart> getKõikKaardid()' - tagastab kaartide nimekirja.
 
 
 
